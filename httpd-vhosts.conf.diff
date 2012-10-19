@@ -1,0 +1,47 @@
+28,30c28,42
+<     DocumentRoot "/usr/local/src/appkitbox/testkit/src/app/webroot"
+<     ServerName appkitbox.com 
+< #    Alias /xxx "/var/www/xxx/public"
+---
+>     ServerAdmin webmaster@dummy-host.example.com
+>     DocumentRoot "/usr/local/apache2/docs/dummy-host.example.com"
+>     ServerName dummy-host.example.com
+>     ServerAlias www.dummy-host.example.com
+>     ErrorLog "/var/log/httpd/dummy-host.example.com-error_log"
+>     CustomLog "/var/log/httpd/dummy-host.example.com-access_log" common
+> </VirtualHost>
+> 
+> <VirtualHost *:80>
+>     ServerAdmin webmaster@dummy-host2.example.com
+>     DocumentRoot "/usr/local/apache2/docs/dummy-host2.example.com"
+>     ServerName dummy-host2.example.com
+>     ErrorLog "/var/log/httpd/dummy-host2.example.com-error_log"
+>     CustomLog "/var/log/httpd/dummy-host2.example.com-access_log" common
+> </VirtualHost>
+32,39d43
+<     <Directory "/usr/local/src/appkitbox/testkit/src/app/webroot">
+<         Options FollowSymLinks
+<         AllowOverride All
+< 	Allow from all
+< 	AuthType Digest
+< 	AuthName appkitbox
+< 	AuthUserFile	/etc/httpd/.htdigest
+< 	Require valid-user
+41,46d44
+<         # Require all granted
+< #        Require ip 127.0.0.1
+< #        Require ip 202.217.72.192/27
+< #        Require ip 61.45.36.226
+< #        Require ip 218.213.142.
+<     </Directory>
+48,57d45
+<     ErrorDocument 400 /error/HTTP_BAD_REQUEST.html.var
+<     ErrorDocument 401 /error/HTTP_UNAUTHORIZED.html.var
+<     ErrorDocument 403 /error/HTTP_FORBIDDEN.html.var
+<     ErrorDocument 404 /error/HTTP_NOT_FOUND.html.var
+<     ErrorDocument 500 /error/HTTP_INTERNAL_SERVER_ERROR.html.var
+<     ErrorDocument 501 /error/HTTP_NOT_IMPLEMENTED.html.var
+<     ErrorDocument 502 /error/HTTP_BAD_GATEWAY.html.var
+<     ErrorDocument 503 /error/HTTP_SERVICE_UNAVAILABLE.html.var
+<     ErrorDocument 506 /error/HTTP_VARIANT_ALSO_VARIES.html.var
+< </VirtualHost>
