@@ -1,8 +1,0 @@
-55c55
-< ServerTokens Prod 
----
-> ServerTokens Full
-65c65
-< ServerSignature Off
----
-> ServerSignature On
