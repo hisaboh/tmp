@@ -1,3 +1,3 @@
 tmp
 ===
-![image][test.jpg]
+![image](test.jpg)
